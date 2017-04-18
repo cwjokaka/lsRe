@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .agree-btn {
+        background-color: #aaaaaa;
+      }
+
+      .not_agree {
+        background-color: #FFF000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <button class="agree-btn" type="button" name="button">
+        <span class="btn-icon">👍</span>
+        <span class="btn-text">agree</span>
+      </button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const button = document.querySelector('.agree-btn');
+    console.log(button);
+    const text = document.querySelector('.btn-text');
+    let isAgree = true;
+    button.addEventListener('click', () => {
+      isAgree = !isAgree;
+      if (isAgree){
+        text.innerText = 'agree';
+      }else {
+        text.innerText = 'not_agree';
+      }
+    }, false);
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="test">
+      <button class="agree-btn" type="button" name="button">
+        <span class="btn-icon">👍</span>
+        <span class="btn-text">agree</span>
+      </button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    class Component {
+      constructor(props = {}){
+        this.prop = props;
+      }
+      setState(state){
+        this.state = state;
+        const oleElem = this.elem;
+        
+      }
+      renderDOM(string){
+        this.constructor.createDomByString(string);
+        this.onClick && this.elem.addEventListener('click', this.onClick.bind(this), false);
+        return this.elem;
+      }
+      static createDomByString(string){
+        const div = document.createElement('div');
+        div.innerHTML = string;
+        return div;
+      }
+    }
+
+    class ColorButton extends Component {
+      constructor(props){
+        super(props);
+        this.state = {color:'blue'};
+      }
+    }
+
+    (function(win, undefined){
+      var com = new Component();
+      console.log(com);
+      console.log(Component.prototype);
+    })(window);
+  </script>
+</html>
